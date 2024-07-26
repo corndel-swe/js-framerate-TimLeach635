@@ -11,7 +11,7 @@ app.set('view engine', 'ejs')
 app.get('/d1e2', (req, res) => {
   const msg = 'Hello from d1e2!'
   // TODO: Render 'd1e2.ejs' and pass the msg
-  res.render("d1e2", { msg })
+  res.render('d1e2', { msg })
 })
 
 // TODO: Open d1e2.ejs and follow the instructions
