@@ -1,1 +1,35 @@
-/* TODO: Add your styles here */
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.movie-list {
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.movie-list__movie {
+  background-color: #dfdfdf;
+  width: 10em;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  filter: drop-shadow(2px 2px 4px #aaaaaa)
+}
+
+.movie-list__title {
+  margin-top: 0;
+}
+
+.movie-list__release-date {
+  margin-bottom: 0;
+
+  font-weight: lighter;
+  font-style: italic;
+}
