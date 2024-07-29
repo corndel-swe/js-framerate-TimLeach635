@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>FrameRate | <%= movie.title %></title>
+</head>
+<body>
+  <h1><%= movie.title %></h1>
+  <img alt="<%= movie.title %>" src="<%= movie.imageURL %>">
+  <h2>Reviews</h2>
+  <ul class="review-list">
+    <% for (let review of reviews) { %>
+      <li class="review-list__review">
+        <p class="review-list__rating"><%= review.rating %>/10</p>
+        <p class="review-list__content"><%= review.content %></p>
+        <p class="review-list__created"><%= review.createdAt %></p>
+      </li>
+    <% } %>
+  </ul>
+</body>
+</html>

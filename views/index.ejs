@@ -11,8 +11,10 @@
   <ul class="movie-list">
     <% for (let movie of movies) { %>
       <li class="movie-list__movie">
-        <h2 class="movie-list__title"><%= movie.title %></h2>
-        <p class="movie-list__release-date"><%= movie.releaseDate %></p>
+        <a class="movie-list__link" href="/movie/<%= movie.id %>">
+          <h2 class="movie-list__title"><%= movie.title %></h2>
+          <p class="movie-list__release-date"><%= movie.releaseDate %></p>
+        </a>
       </li>
     <% } %>
   </ul>
