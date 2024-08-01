@@ -8,6 +8,28 @@
 </head>
 <body>
   <h1>FrameRate</h1>
+  <form>
+    <label for="sort">Sort by:</label>
+    <select name="sort" id="sort">
+      <option
+        value="dateDesc"
+        <% if (sort === "dateDesc") { %>
+          selected
+        <% } %>
+      >
+        Release date (newest first)
+      </option>
+      <option
+        value="dateAsc"
+        <% if (sort === "dateAsc") { %>
+          selected
+        <% } %>
+      >
+        Release date (oldest first)
+      </option>
+    </select>
+    <button type="submit">Sort</button>
+  </form>
   <ul class="movie-list">
     <% for (let movie of movies) { %>
       <li class="movie-list__movie">
