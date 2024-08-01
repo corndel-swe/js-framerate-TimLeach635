@@ -9,7 +9,13 @@ app.set('view engine', 'ejs')
 
 // TODO: add your endpoints here
 app.get('/', async (req, res) => {
-  const movies = await Movie.findAll()
+  let movies
+  if (req.query.sort === "asc") {
+    movies = await Movie.findAll(undefined, true)
+  } else {
+    movies = await Movie.findAll()
+  }
+  
   res.render('index', { movies })
 })
 

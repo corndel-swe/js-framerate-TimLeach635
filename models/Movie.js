@@ -16,7 +16,7 @@ class Movie {
     'War'
   ]
 
-  static async findAll(genre) {
+  static async findAll(genre, sortAsc = false) {
     const query = [
       'select movies.*',
       'from movies',
@@ -31,7 +31,12 @@ class Movie {
     }
 
     query.push('group by movies.id')
-    query.push('order by movies.releaseDate desc')
+    query.push('order by movies.releaseDate')
+    if (sortAsc) {
+      query.push('asc')
+    } else {
+      query.push('desc')
+    }
 
     const results = await db.raw(query.join(' '), values)
     return results
